@@ -1,10 +1,10 @@
-#include "Dictionary.h"
 #include "Practice.h"
 #include "Practice1.h"
 #include "Practice2.h"
 #include "Practice3.h"
 #include "Practice4.h"
 #include "Practice5.h"
+#include "Practice6.h"
 
 #include <iostream>
 #include <algorithm>
@@ -29,6 +29,23 @@ public:
 
 	std::string Name;
 	double Score;
+};
+
+class Point
+{
+public:
+	Point(int x, int y)
+	{
+		this->x = x;
+		this->y = y;
+	}
+
+	int x, y;
+};
+
+void Foo(std::string s)
+{
+	std::cout << s << std::endl;
 };
 
 
@@ -59,45 +76,58 @@ int main()
 	//практика с copy, copy_if, remove, remove_if и алгоритмами по нахождению максимального и минимального значения в контейнерах
 	//practice5();
 
-	std::cout << "___________________________________________________" << std::endl;
-	std::cout << "Практика c accumulate:" << std::endl;
-
-	std::vector<int> vec = { 11,22,33,44,55,66,77,88,99 };
-	int total = std::accumulate(vec.begin(), vec.end(), 0, [](int a, int b) {
-		//return (a * b);
-
-		if (b % 2 == 0)
-			return a + b;
-
-		return a;
-
-		// контролируем работы алгоритмы в анонимной функции
-		// a - аккумулятор, b - поступающее значение
-		});
-
-	std::cout << "Total: " << total << std::endl;
-
-	std::vector<int> vec1 = { 1,2,3,4,5,6,7,8,9 };
-	std::string str = std::accumulate(next(vec1.begin()), vec1.end(), std::to_string(vec1[0]), [](std::string a, int b) {
-		return (a + "_" + std::to_string(b));
-		});
-
-	std::cout << "Преобразование int'ов в строку: " << str << std::endl;
-
+	//практика с accumulate, equal и mismatch
+	//practice6();
 
 	std::cout << "___________________________________________________" << std::endl;
-	std::cout << "Практика c equal и mismatch:" << std::endl;
+	std::cout << "Практика c for_each:" << std::endl;
 
-	std::list<int> ls1 = { 1,2,3,4,5,6,7,8,9 };
-	std::list<int> ls3 = { 1,2,3,4,5,6,7,8,9,11,24 };
-	std::list<int> ls2 = { 1,2,3,4,5,6,7,8,9,11,24 };
+	std::list<std::string> l_str =
+	{ 
+		"Sasha",
+		"Pasha",
+		"Dasha",
+		"Masha",
+		"Dimasik",
+		"Viktor",
+	};
 
-	bool result = std::equal(ls1.begin(), ls1.end(), ls2.begin(), ls2.end());
-	bool result1 = std::equal(ls2.begin(), ls2.end(), ls3.begin());
-	std::cout << "Результат сравнения ls1 с ls2: " << result << std::endl;
-	std::cout << "Результат сравнения ls2 с ls3: " << result1 << std::endl;
+	std::for_each(l_str.begin(), l_str.end(), Foo);
+	std::cout << "\n";
+
+	std::for_each(l_str.begin(), l_str.end(), [](std::string& a)
+		{
+			a += "---";
+		}
+	);
+	std::for_each(l_str.begin(), l_str.end(), Foo);
 
 
+	std::cout << "___________________________________________________" << std::endl;
+	std::cout << "Практика c unique:" << std::endl;
+
+	std::vector<int> vec = {1,2,3,3,3,3,4,5,6,6,7,8,99,99,17,394,52,77};
+	std::vector<int> vec1;
+	
+	for (auto el : vec)
+	{
+		std::cout << el << " ";
+
+	}
+
+	//auto p_uniq = std::unique(vec.begin(), vec.end());
+	//vec.erase(p_uniq, vec.end());
+	std::unique_copy(vec.begin(), vec.end(), std::back_inserter(vec1));
+
+	std::cout << "\n";
+
+	for (auto el : vec1)
+	{
+		std::cout << el << " ";
+
+	}
+
+	
 
 
 	return 0;

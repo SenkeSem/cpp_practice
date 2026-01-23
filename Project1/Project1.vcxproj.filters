@@ -18,9 +18,6 @@
     <ClCompile Include="file1.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Dictionary.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="Practice.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
@@ -39,11 +36,11 @@
     <ClCompile Include="Practice5.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Practice6.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Dictionary.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="Practice.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
@@ -60,6 +57,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Practice5.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Practice6.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

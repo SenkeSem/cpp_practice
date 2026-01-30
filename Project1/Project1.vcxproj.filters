@@ -13,54 +13,66 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Файлы заголовков\Headers">
+      <UniqueIdentifier>{f9330d90-e79a-4318-a59b-78484a8f73a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Practice">
+      <UniqueIdentifier>{86b85e90-76e5-4dfa-a48a-7bad6fdbc27e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="file1.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Practice.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Practice</Filter>
     </ClCompile>
     <ClCompile Include="Practice1.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Practice</Filter>
     </ClCompile>
     <ClCompile Include="Practice2.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Practice</Filter>
     </ClCompile>
     <ClCompile Include="Practice3.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Practice</Filter>
     </ClCompile>
     <ClCompile Include="Practice4.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Practice</Filter>
     </ClCompile>
     <ClCompile Include="Practice5.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Practice</Filter>
     </ClCompile>
     <ClCompile Include="Practice6.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Practice</Filter>
+    </ClCompile>
+    <ClCompile Include="Practice7.cpp">
+      <Filter>Исходные файлы\Practice</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Practice.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Headers</Filter>
     </ClInclude>
     <ClInclude Include="Practice1.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Headers</Filter>
     </ClInclude>
     <ClInclude Include="Practice2.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Headers</Filter>
     </ClInclude>
     <ClInclude Include="Practice3.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Headers</Filter>
     </ClInclude>
     <ClInclude Include="Practice4.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Headers</Filter>
     </ClInclude>
     <ClInclude Include="Practice5.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Headers</Filter>
     </ClInclude>
     <ClInclude Include="Practice6.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Practice7.h">
+      <Filter>Файлы заголовков\Headers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

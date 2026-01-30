@@ -5,6 +5,7 @@
 #include "Practice4.h"
 #include "Practice5.h"
 #include "Practice6.h"
+#include "Practice7.h"
 
 #include <iostream>
 #include <algorithm>
@@ -12,6 +13,45 @@
 #include <vector>
 #include <list>
 #include <numeric>
+#include <random>
+
+class IAction
+{
+public:
+	virtual void Action() = 0;
+};
+
+class CatAction : public IAction
+{
+	virtual void Action() override
+	{
+		std::cout << "Гладим кота" << std::endl;
+	}
+};
+
+class DogAction : public IAction
+{
+	virtual void Action() override
+	{
+		std::cout << "Гуляем с собакой" << std::endl;
+	}
+};
+
+class SleepAction : public IAction
+{
+	virtual void Action() override
+	{
+		std::cout << "Спим" << std::endl;
+	}
+};
+
+class CoffeeAction : public IAction
+{
+	virtual void Action() override
+	{
+		std::cout << "Пьём вкусный кофе" << std::endl;
+	}
+};
 
 class Person
 {
@@ -43,12 +83,6 @@ public:
 	int x, y;
 };
 
-void Foo(std::string s)
-{
-	std::cout << s << std::endl;
-};
-
-
 int main()
 {
 	setlocale(LC_ALL, "ru");
@@ -79,55 +113,39 @@ int main()
 	//практика с accumulate, equal и mismatch
 	//practice6();
 
-	std::cout << "___________________________________________________" << std::endl;
-	std::cout << "Практика c for_each:" << std::endl;
-
-	std::list<std::string> l_str =
-	{ 
-		"Sasha",
-		"Pasha",
-		"Dasha",
-		"Masha",
-		"Dimasik",
-		"Viktor",
-	};
-
-	std::for_each(l_str.begin(), l_str.end(), Foo);
-	std::cout << "\n";
-
-	std::for_each(l_str.begin(), l_str.end(), [](std::string& a)
-		{
-			a += "---";
-		}
-	);
-	std::for_each(l_str.begin(), l_str.end(), Foo);
-
+	//практика с for_each, unique и copy_unique
+	//practice7();
 
 	std::cout << "___________________________________________________" << std::endl;
-	std::cout << "Практика c unique:" << std::endl;
+	std::cout << "Практика c random_shuffle:" << std::endl;
 
-	std::vector<int> vec = {1,2,3,3,3,3,4,5,6,6,7,8,99,99,17,394,52,77};
-	std::vector<int> vec1;
-	
+	std::vector<int> vec = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17 };
+	std::shuffle(vec.begin(), vec.end(), std::mt19937(std::random_device()()));
+
 	for (auto el : vec)
 	{
 		std::cout << el << " ";
-
 	}
-
-	//auto p_uniq = std::unique(vec.begin(), vec.end());
-	//vec.erase(p_uniq, vec.end());
-	std::unique_copy(vec.begin(), vec.end(), std::back_inserter(vec1));
-
+	std::cout << "\n";
 	std::cout << "\n";
 
-	for (auto el : vec1)
+	IAction* arr[4] =
 	{
-		std::cout << el << " ";
+		new CatAction(),
+		new DogAction(),
+		new SleepAction(),
+		new CoffeeAction(),
+	};
 
+	std::shuffle(std::begin(arr), std::end(arr), std::mt19937(std::random_device()()));
+
+	for (auto &el : arr)
+	{
+		el->Action();
 	}
 
-	
+
+
 
 
 	return 0;
